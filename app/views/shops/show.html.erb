@@ -1,0 +1,18 @@
+<h1>show</h1>
+<%= image_tag(@shop.photo.url) %>
+<p>Name: <%= @shop.name %></p>
+<p>Address: <%= @shop.street_address %></p>
+<p>City: <%= @shop.city %></p>
+<p>State: <%= @shop.state %></p>
+<p>Zip: <%= @shop.zip_code %></p>
+<p>Description <%= @shop.description %></p>
+<p>Reservations: <%= @shop.reservations ? "Yes" : "No" %></p>
+<p>Delivery: <%= @shop.delivery ? "Yes" : "No" %></p>
+<p>Phone: <%= @shop.phone %></p>
+
+<%= link_to 'create menu', new_shop_item_path(@shop) %>
+<% if user_signed_in? %>
+<% if @shop.editable_by?(current_user) %>
+<%= button_to 'edit restaurant', edit_shop_path(@shop), method: :get %>
+<% end %>
+<% end %>

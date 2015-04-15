@@ -1,0 +1,12 @@
+<%= @shops.each do |shop| %>
+<%= image_tag(shop.photo.url) %>
+
+<p>adress: <%= link_to shop.name , shop_path(shop) %></p>
+<p>city: <%= shop.city %></p>
+<p>state: <%= shop.state %></p>
+<p>zip: <%= shop.zip_code %></p>
+<p>reservations: <%= shop.reservations ? "Yes" : "No" %></p>
+<p>delivery: <%= shop.delivery ? "Yes" : "No" %></p>
+<p>phone: <%= shop.phone %></p>
+
+<% end %>
