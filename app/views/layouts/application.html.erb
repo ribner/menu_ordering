@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>MenuApp</title>
+  <title>meni app</title>
   <%= stylesheet_link_tag 'application', media: 'all' %>
   <%= csrf_meta_tags %>
 </head>
@@ -10,7 +10,7 @@
   <nav class="top-bar">
     <ul class="title-area">
       <li class="name">
-        <h1><a href="/">MenuApp</a></h1>
+        <h1><a href="/">meni</a></h1>
       </li>
     </ul>
 
@@ -25,6 +25,7 @@
       </ul>
     </section>
   </nav>
+
   <div class="row">
   <%- flash.each do |key, value| -%>
     <div class="flash flash-<%= key %>">

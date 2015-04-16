@@ -63,3 +63,5 @@ gem 'aws-sdk'
 gem 'mini_magick'
 gem 'dotenv-rails', group: [:development, :test]
 gem 'pry'
+gem 'yelp'
+gem 'json'

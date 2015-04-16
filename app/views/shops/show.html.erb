@@ -1,6 +1,9 @@
-<h1>show</h1>
+<div class="content-block">
+<h1><%= @shop.name %></h1>
+<hr>
+<div class="row">
+  <div class="large-6 columns">
 <%= image_tag(@shop.photo.url) %>
-<p>Name: <%= @shop.name %></p>
 <p>Address: <%= @shop.street_address %></p>
 <p>City: <%= @shop.city %></p>
 <p>State: <%= @shop.state %></p>
@@ -9,10 +12,17 @@
 <p>Reservations: <%= @shop.reservations ? "Yes" : "No" %></p>
 <p>Delivery: <%= @shop.delivery ? "Yes" : "No" %></p>
 <p>Phone: <%= @shop.phone %></p>
-
-<%= link_to 'create menu', new_shop_item_path(@shop) %>
+</div>
+<div class="large-6 columns">
+<iframe src="<%= @google_maps_url %>"></iframe>
+</div>
+</div>
+<%= link_to 'view menu', shop_items_path(@shop), class: "button" %>
 <% if user_signed_in? %>
 <% if @shop.editable_by?(current_user) %>
+</br>
+<%= link_to 'create menu', new_shop_item_path(@shop) %>
 <%= button_to 'edit restaurant', edit_shop_path(@shop), method: :get %>
 <% end %>
 <% end %>
+</div>

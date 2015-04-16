@@ -1,12 +1,21 @@
-<%= @shops.each do |shop| %>
+<div class="content-block">
+<div class="row">
+
+<% @shops.each do |shop| %>
+<div class="large-6 columns">
 <%= image_tag(shop.photo.url) %>
 
-<p>adress: <%= link_to shop.name , shop_path(shop) %></p>
+<p><%= link_to shop.name , shop_path(shop) %></p>
+<p>address: <%= shop.street_address %></p>
 <p>city: <%= shop.city %></p>
 <p>state: <%= shop.state %></p>
 <p>zip: <%= shop.zip_code %></p>
 <p>reservations: <%= shop.reservations ? "Yes" : "No" %></p>
 <p>delivery: <%= shop.delivery ? "Yes" : "No" %></p>
 <p>phone: <%= shop.phone %></p>
-
+</div>
 <% end %>
+
+</div>
+</div>
+
