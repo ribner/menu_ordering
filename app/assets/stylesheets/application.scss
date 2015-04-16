@@ -15,3 +15,35 @@
  *= require foundation_and_overrides
 
  */
+.home-bg {
+   background: url("../assets/home-bg.jpg");
+    background-repeat:no-repeat;
+   background-size: cover;
+   height: 100%;
+   color: #FFF !important;
+   text-align: right;
+   h3 {
+  margin-top: 40px;
+   color: #999 !important;
+   padding-bottom: 50px;
+}
+
+}
+
+body {
+  background-color: #E8E8E8 ;
+}
+
+.content-block {
+  background-color: #F8F8F8 ;
+  padding: 15px;
+  margin-top: 15px;
+   -moz-box-shadow:    5px 5px 5px 6px #ccc;
+  -webkit-box-shadow: 5px 5px 5px 6px #ccc;
+  box-shadow:         5px 5px 5px 6px #ccc;
+}
+
+iframe {
+  height: 360px;
+  width:  100%;
+}

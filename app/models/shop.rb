@@ -14,4 +14,9 @@ class Shop < ActiveRecord::Base
   def editable_by?(current_user)
       current_user.admin || current_user == user
   end
+
+  def parse_for_google_maps
+    @google_map_params = [street_address, city, state].join(" ")
+    @google_map_params.gsub!(" ", "+")
+  end
 end

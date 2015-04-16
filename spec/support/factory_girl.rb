@@ -26,6 +26,14 @@ FactoryGirl.define do
     user
   end
 
+  factory :item do
+    name "wonton soup"
+    category "soup"
+    description "light wonton soup is very healthy"
+    price "5"
+    cost "5"
+    shop
+  end
 
 
 end

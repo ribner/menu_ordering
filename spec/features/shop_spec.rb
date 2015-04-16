@@ -88,7 +88,6 @@ feature "user edits a shop they own", %Q{
     sign_in shop.user
     visit edit_shop_path(shop)
     fill_in("Description", with: "New description goes here")
-    save_and_open_page
     click_button("Update Shop")
     expect(page).to have_content("Restaurant updated!")
   end
@@ -96,7 +95,6 @@ feature "user edits a shop they own", %Q{
   scenario "owner provides new invalid information" do
     sign_in shop.user
     visit edit_shop_path(shop)
-
     fill_in("Name", with: "")
     click_button("Update Shop")
     expect(page).to have_content("Name can't be blank")
@@ -108,7 +106,6 @@ feature "user edits a shop they own", %Q{
     visit edit_shop_path(shop)
     fill_in("Name", with: "")
     click_button("Update Shop")
-    save_and_open_page
     expect(page).to have_content("Name can't be blank")
   end
 

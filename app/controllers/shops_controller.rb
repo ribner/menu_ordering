@@ -8,7 +8,6 @@ before_action :authorize_user, except: [:index, :show, :create, :new]
 
   def create
     @shop = current_user.shops.new(shop_params)
-
     if @shop.save
       flash[:notice] = "Restaurant created!"
       redirect_to @shop
@@ -20,6 +19,10 @@ before_action :authorize_user, except: [:index, :show, :create, :new]
 
   def show
     @shop = Shop.find(params[:id])
+    @google_maps_url = %Q{
+      https://www.google.com/maps/embed/v1/place?key=
+      #{ENV["GOOGLE_MAPS_API_KEY"]}&q=#{@shop.parse_for_google_maps}
+    }
   end
 
   def edit
