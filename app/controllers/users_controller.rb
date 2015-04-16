@@ -2,8 +2,6 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
   before_action :authorize_user, except: [:create, :new, :update, :index, :edit]
 
-
-
   private
 
   def authorize_user
