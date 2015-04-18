@@ -1,0 +1,10 @@
+<div class="content-block">
+  <h1>your order</h1>
+  <p><%= @order.order_status %><p>
+  <p><%= @order.paid %><p>
+  <p><%= @order.created_at %><p>
+  <% @order.items.each do |item| %>
+    <p> <%=  item.name %> : $<%= item.price %> </p>
+
+  <% end %>
+</div>
