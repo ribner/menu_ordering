@@ -16,7 +16,8 @@
 
  */
 .home-bg {
-   background: url("../assets/home-bg.jpg");
+   background-image: image-url("home-bg.jpg");
+
     background-repeat:no-repeat;
    background-size: cover;
    height: 100%;
