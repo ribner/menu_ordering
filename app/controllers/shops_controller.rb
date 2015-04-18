@@ -1,9 +1,8 @@
 class ShopsController < ApplicationController
-before_action :authorize_user, except: [:index, :show, :create, :new]
+before_action :authorize_user
 
   def new
     @shop = current_user.shops.new
-
   end
 
   def create
@@ -30,7 +29,7 @@ before_action :authorize_user, except: [:index, :show, :create, :new]
   end
 
   def index
-    @shops = Shop.all
+      @shops = Shop.all
   end
 
   def update
@@ -61,8 +60,7 @@ before_action :authorize_user, except: [:index, :show, :create, :new]
   end
 
   def authorize_user
-    @shop = Shop.find(params[:id])
-    user_signed_in? && @shop.editable_by?(current_user)
+    redirect_to new_user_session_path if current_user == nil
   end
 
 end

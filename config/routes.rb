@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :shops do
     resources :items
     resources :orders
+    resources :orderjoins
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
