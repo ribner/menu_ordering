@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20150416185726) do
     t.string   "category"
     t.string   "description"
     t.integer  "price",       null: false
-    t.string   "cost"
+    t.integer  "cost"
     t.string   "photo"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false

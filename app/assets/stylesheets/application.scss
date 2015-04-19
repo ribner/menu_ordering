@@ -15,33 +15,60 @@
  *= require foundation_and_overrides
 
  */
-.home-bg {
+
+ @import url(http://fonts.googleapis.com/css?family=Questrial);
+ @import url(http://fonts.googleapis.com/css?family=Poiret+One);
+ .home-bg {
    background-image: image-url("home-bg.jpg");
 
-    background-repeat:no-repeat;
+   background-repeat:no-repeat;
    background-size: cover;
    height: 100%;
    color: #FFF !important;
    text-align: right;
    h3 {
-  margin-top: 40px;
-   color: #999 !important;
-   padding-bottom: 50px;
+    margin-top: 40px;
+    color: #999 !important;
+    padding-bottom: 50px;
+  }
 }
 
+h1 {
+  font-family: 'Poiret One', cursive;
+}
+h2 {
+  font-family: 'Poiret One', cursive;  
 }
 
+h3 {
+  font-family: 'Poiret One', cursive;  
+}
+h4 {
+  font-family: 'Poiret One', cursive; 
+}
+
+h5 {
+  font-family: 'Poiret One', cursive;
+}
 body {
   background-color: #E8E8E8 ;
+  font-family: 'Questrial', sans-serif;
+}
+.top-bar .name h1 a {
+  color: #f07005 ;
 }
 
+.top-bar-section ul li > a {
+  color: #f07005 ;
+}
 .content-block {
   background-color: #F8F8F8 ;
   padding: 15px;
   margin-top: 15px;
-   -moz-box-shadow:    5px 5px 5px 6px #ccc;
-  -webkit-box-shadow: 5px 5px 5px 6px #ccc;
-  box-shadow:         5px 5px 5px 6px #ccc;
+  border-style: solid;
+  border-color: #f0a205;
+  border-width: 1px;
+  margin-bottom: 15px;
 }
 
 iframe {

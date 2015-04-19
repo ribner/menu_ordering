@@ -23,6 +23,15 @@ before_action :authorize_user
     @order = Order.find(params[:id])
   end
 
+  def edit
+    
+  end
+
+  def destroy
+    @orderjoin = Orderjoin.where("item_id = ? and order_id = ?", params[:item_id], params[:order_id])
+    Orderjoin.delete(@orderjoin.first.id)
+    redirect_to(:back)
+  end
   private
 
   def authorize_user
@@ -31,3 +40,4 @@ before_action :authorize_user
 end
 
 
+# and order_id: params[:order_id]
