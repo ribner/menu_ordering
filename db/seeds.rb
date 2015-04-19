@@ -8,7 +8,7 @@
 
 r_and_d = [true, false]
 
-user = User.new(email: "sdafsddx@seeder.com", password: "seedpassword")
+user = User.new(email: "aa@seed.com", password: "seedpassword")
 user.save!
 
 client = Yelp::Client.new({ consumer_key: ENV['CONSUMER_KEY'],
@@ -31,3 +31,13 @@ business_info.each do |business|
     photo: "#{business["image_url"]}"
   )
 end
+
+
+menu_items = ["pasta", "pizza", "chicken parm", "gumbo shrimp", "garden salad", "pizza", "steak", "burger"]
+
+menu_items.each do |item|
+  Item.find_or_create_by!(
+    shop_id: 1 ,name: item, description: "beef vermicelli with snipata sauce covered in a spicy aflredo tamato with milk cheese",
+    price: "5", cost: "2" )
+end
+

@@ -3,4 +3,6 @@ class Order < ActiveRecord::Base
   has_many :items, through: :orderjoins
   has_many :orderjoins
 
+def paid
+end
 end
