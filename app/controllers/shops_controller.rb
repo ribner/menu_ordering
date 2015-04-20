@@ -8,6 +8,8 @@ before_action :authorize_user
   def create
     @shop = current_user.shops.new(shop_params)
     if @shop.save
+      current_user.admin = true
+      current_user.save
       flash[:notice] = "Restaurant created!"
       redirect_to @shop
     else

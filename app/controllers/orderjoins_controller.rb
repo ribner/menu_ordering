@@ -6,7 +6,7 @@ before_action :authorize_user
     @item_id = params[:item]
     @order = current_user.orders.where(paid: false )[0]
     if @order == nil
-      @order = current_user.orders.new
+      @order = current_user.orders.new(shop_id: params[:shop_id])
     end
     @orderjoin = @order.orderjoins.new(item_id: params[:item_id])
     if @orderjoin.save
@@ -24,7 +24,7 @@ before_action :authorize_user
   end
 
   def edit
-    
+
   end
 
   def destroy
@@ -40,4 +40,4 @@ before_action :authorize_user
 end
 
 
-# and order_id: params[:order_id]
+
