@@ -1,0 +1,32 @@
+
+<h1><%= @shop.name %></h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Order ID</th>
+      <th>Servername / Username</th>
+      <th>Order Status</th>
+      <th>Payment Status</th>
+      <th>Order Total</th>
+      <th>Change Status</th>
+      <th>Delete Order</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @orders.each do |order| %>
+    <tr>
+  <td> <%= link_to order.id, shop_order_path(order.shop, order) %></td>
+  <td> <%= order.user.email %></p>
+  <td> <%= order.order_status %></td>
+  <td> <%= order.paid ? "paid" : "unpaid" %></p>
+  <td>$<%= order.total_price %></td>
+  <td> <%= link_to 'change order status to fulfilled', edit_shop_order_path(order.shop, order, order_status: "fulfilled") %> </td>
+  <td> <%= link_to 'delete order', shop_order_path(order.shop, order),method: :delete %> </td>
+</tr>
+<% end %>
+
+  </tbody>
+</table>
+
+
