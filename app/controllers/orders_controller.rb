@@ -36,6 +36,18 @@ before_action :authorize_user
     redirect_to(:back)
   end
 
+  def create
+    @shop = Shop.find(params[:shop_id])
+    @table_number = params[:order][:table_number]
+    @order = @shop.orders.where("paid = ? and table_number = ?", false, @table)[0]
+    if @order == nil
+      @order = current_user.orders.new(shop_id: params[:shop_id], table_number: @table_number)
+      @order.save
+      flash[:notice] = "New Party Created"
+    end
+    redirect_to shop_items_path(@shop)
+  end
+
   private
 
   def authorize_user

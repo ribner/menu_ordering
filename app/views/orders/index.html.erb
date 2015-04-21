@@ -6,6 +6,7 @@
     <tr>
       <th>Order ID</th>
       <th>Servername / Username</th>
+      <th>Table Number</th>
       <th>Order Status</th>
       <th>Payment Status</th>
       <th>Order Total</th>
@@ -18,6 +19,7 @@
     <tr>
   <td> <%= link_to order.id, shop_order_path(order.shop, order) %></td>
   <td> <%= order.user.email %></p>
+  <td> <%= order.table_number %></p>
   <td> <%= order.order_status %></td>
   <td> <%= order.paid ? "paid" : "unpaid" %></p>
   <td>$<%= order.total_price %></td>

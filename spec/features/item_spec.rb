@@ -57,7 +57,7 @@ end
 
 feature "guest can't add a menu item", %Q{
   As a guest
-  I should not be able to review a restaurant
+  I should not be able to add a menu item
   Because I am not signed in
 } do
 
