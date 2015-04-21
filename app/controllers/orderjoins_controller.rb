@@ -6,16 +6,14 @@ before_action :authorize_user
     @item_id = params[:item]
     @order = current_user.orders.where(paid: false )[0]
     if @order == nil
-      @order = current_user.orders.new(shop_id: params[:shop_id])
-    end
-    @orderjoin = @order.orderjoins.new(item_id: params[:item_id])
-    if @orderjoin.save
-      flash[:notice] = "Item added to order!"
-      redirect_to shop_items_path(@shop)
+        flash[:notice] = "You must first record your table number"
     else
-      flash[:errors] = @order.errors.full_messages
-      redirect_to(:back)
+      @orderjoin = @order.orderjoins.new(item_id: params[:item_id])
+      if @orderjoin.save
+        flash[:notice] = "Item added to order!"
+      end
     end
+    redirect_to shop_items_path(@shop)
   end
 
 
