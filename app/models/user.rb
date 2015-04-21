@@ -5,4 +5,10 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_many :shops
   has_many :orders
+
+  def define_admin
+    self.admin = true
+    self.save
+  end
+
 end

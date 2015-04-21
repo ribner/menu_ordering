@@ -11,6 +11,13 @@ class Shop < ActiveRecord::Base
   validates :zip_code, presence: true
 
 
+  def check_photo
+    if self.photo.url
+      return self.photo.url
+    elsif self.yelp_photo
+      return self.yelp_photo
+    end
+  end
 
   def editable_by?(current_user)
       current_user.admin || current_user == user

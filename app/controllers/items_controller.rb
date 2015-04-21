@@ -1,20 +1,20 @@
 class ItemsController < ApplicationController
 before_action :authorize_user
+before_action :find_item, only: [:edit, :update, :destroy]
+before_action :find_shop, only: [:index, :new, :create]
+
 
   def index
     @item = Item.new
-    @shop = Shop.find(params[:shop_id])
     @items = @shop.items
     @order = Order.new
   end
 
   def new
     @item = Item.new
-    @shop = Shop.find(params[:shop_id])
   end
 
   def create
-    @shop = Shop.find(params[:shop_id])
     @item = @shop.items.new(item_params)
     if @item.save
       flash[:notice] = "Menu Item Created!"
@@ -27,12 +27,10 @@ before_action :authorize_user
 
 
   def edit
-    @item = Item.find(params[:id])
     @shop = @item.shop
   end
 
   def update
-    @item = Item.find(params[:id])
     if @item.update(item_params)
       flash[:notice] = "Menu item updated!"
       redirect_to shop_items_path(@item.shop)
@@ -43,19 +41,25 @@ before_action :authorize_user
   end
 
   def destroy
-    @item = Item.find(params[:id])
     if @item.shop.user == current_user
       @item.destroy
       flash[:notice] = "Menu Item Deleted!"
-      redirect_to shop_path(@item.shop)
     else
       flash[:erros] = "Cannot edit others users' menu"
-      redirect_to shop_path(@item.shop)
     end
+    redirect_to shop_path(@item.shop)
   end
 
 
 private
+
+  def find_shop
+        @shop = Shop.find(params[:shop_id])
+  end
+
+  def find_item
+    @item = Item.find(params[:id])
+  end
 
   def item_params
     params.require(:item).permit(
