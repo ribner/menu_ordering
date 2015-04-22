@@ -3,6 +3,10 @@ before_action :authorize_user
 before_action :find_item, only: [:edit, :update, :destroy]
 before_action :find_shop, only: [:index, :new, :create]
 
+  def import
+    Item.import(params[:file],params[:shop_id])
+    redirect_to root_url, notice: "Products imported."
+  end
 
   def index
     @item = Item.new
