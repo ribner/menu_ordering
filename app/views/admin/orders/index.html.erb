@@ -22,8 +22,8 @@
           <td> <%= order.order_status %></td>
           <td> <%= order.paid ? "paid" : "unpaid" %></p>
             <td>$<%= order.total_price %></td>
-            <td> <%= link_to 'change order status to fulfilled', edit_shop_order_path(order.shop, order, order_status: "fulfilled") %> </td>
-            <td> <%= link_to 'delete order', shop_order_path(order.shop, order),method: :delete %> </td>
+            <td> <%= link_to 'change order status to fulfilled', edit_admin_shop_order_path(order.shop, order, order_status: "fulfilled") %> </td>
+            <td> <%= link_to 'delete order', admin_shop_order_path(order.shop, order),method: :delete %> </td>
           </tr>
           <% end %>
 

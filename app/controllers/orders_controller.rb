@@ -15,25 +15,10 @@ before_action :find_shop, only: [:index, :create]
   	if params[:paid]
   		@order.paid = true
       @order.save
-  	elsif params[:order_status] == "fulfilled"
-      @order.order_status = "fulfilled"
-      @order.save
-      flash[:notice] = "Order Status Changed"
-    end
+  	end
   	redirect_to(:back)
   end
 
-  def index
-    @orders = @shop.orders.where("order_status = ? or paid = ?", "submitted", false)
-    @orders = @orders.order("order_status ASC, paid ASC")
-  end
-
-  def destroy
-    @orderjoins = Orderjoin.where(order_id: params[:id])
-    Orderjoin.delete(@orderjoins)
-    flash[:notice] = "Order Cleared"
-    redirect_to(:back)
-  end
 
   def create
     @table_number = params[:order][:table_number]

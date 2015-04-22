@@ -19,7 +19,7 @@
  @import url(http://fonts.googleapis.com/css?family=Questrial);
  @import url(http://fonts.googleapis.com/css?family=Poiret+One);
  .home-bg {
-   background-image: image-url("home-bg.jpg");
+   background-image: image-url("warsaw.jpg");
 
    background-repeat:no-repeat;
    background-size: cover;
@@ -28,23 +28,49 @@
    text-align: right;
    h3 {
     margin-top: 40px;
-    color: #999 !important;
+    color: orange !important;
     padding-bottom: 50px;
   }
+}
+.upper-block {
+  background-color: #111;
+  height: 33vh;
+  h3 {
+    margin-top: 40px;
+    color: orange !important;
+    padding-bottom: 50px;
+  }
+}
+.middle-block {
+  height: 33vh;
+}
+.lower-block {
+  background-color: #111;
+  height: 33vh;
+  .button {
+  background-color: rgba(0, 0, 0, 0.0); ;
+  color: #f07005;
+  border: 2px solid ;
+  border-color: #f07005;
+  padding:8px;
+  margin-top:10px;
+
+  }
+
 }
 
 h1 {
   font-family: 'Poiret One', cursive;
 }
 h2 {
-  font-family: 'Poiret One', cursive;  
+  font-family: 'Poiret One', cursive;
 }
 
 h3 {
-  font-family: 'Poiret One', cursive;  
+  font-family: 'Poiret One', cursive;
 }
 h4 {
-  font-family: 'Poiret One', cursive; 
+  font-family: 'Poiret One', cursive;
 }
 
 h5 {

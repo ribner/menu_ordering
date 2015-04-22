@@ -7,4 +7,5 @@ class Order < ActiveRecord::Base
    def total_price
     self.items.sum(:price)
   end
+
 end
