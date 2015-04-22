@@ -18,13 +18,13 @@ feature "user places order", %Q{
     fill_in "Table number", with: "1"
     click_button("Create Order")
     expect(page).to have_content("New Party Created")
-    click_link("order item")
+    click_button("order item")
     expect(page).to have_content("Item added to order!")
   end
 
   scenario "user orders menu item without first inputting table" do
     visit shop_items_path(item.shop)
-    click_link("order item")
+    click_button("order item")
     expect(page).to have_content("You must first record your table number")
   end
 end
