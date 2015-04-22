@@ -18,6 +18,12 @@
 
  @import url(http://fonts.googleapis.com/css?family=Questrial);
  @import url(http://fonts.googleapis.com/css?family=Poiret+One);
+ .menu-item-block {
+  border: 1px solid ;
+  border-color: #D8D8D8 ;
+  padding:8px;
+  margin:10px;
+ }
  .home-bg {
    background-image: image-url("warsaw.jpg");
 
@@ -47,6 +53,8 @@
 .lower-block {
   background-color: #111;
   height: 33vh;
+}
+
   .button {
   background-color: rgba(0, 0, 0, 0.0); ;
   color: #f07005;
@@ -56,8 +64,6 @@
   margin-top:10px;
 
   }
-
-}
 
 h1 {
   font-family: 'Poiret One', cursive;
