@@ -18,6 +18,7 @@ before_action :authorize_user
   end
 
   def show
+    @order = Order.new
     @shop = Shop.find(params[:id])
     @google_maps_url = %Q{
       https://www.google.com/maps/embed/v1/place?key=

@@ -1,15 +1,7 @@
 <div class="content-block">
-<%= form_for [@order.shop,@order], url: shop_orders_path(@shop), method: :create do |f|  %>
+<h2><%= @shop.name %></h2>
+<hr>
 
-  <p>
-    <%= f.label :table_number %><br>
-    <%= f.text_field :table_number %>
-  </p>
-  <p>
-
-    <%= f.submit  %>
-  </p>
-<% end %>
 <% @items.each do |item| %>
 
   <div class="menu-item-block">
