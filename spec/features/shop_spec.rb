@@ -80,7 +80,8 @@ feature "user edits a shop they own", %Q{
 
   scenario "owner edits a shop they own" do
     sign_in shop.user
-    visit shop_path(shop)
+    visit admin_shop_path(shop)
+    save_and_open_page
     page.should have_selector(:link_or_button, 'edit restaurant')
   end
 
@@ -138,5 +139,7 @@ feature "user deletes a shop they own", %Q{
 
     expect(page).to have_content("Restaurant deleted!")
   end
-
 end
+
+
+
