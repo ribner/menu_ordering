@@ -1,0 +1,33 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script type="text/javascript" charset="utf-8">
+$(function() {
+
+  new Highcharts.Chart({
+    chart: {
+      renderTo: "orders_chart"
+    },
+    xAxis: {
+      type: "datatime",
+      text: "Date",
+      allowDecimals: false
+    },
+    yAxis: {
+      title: {
+        text: "Dollars"
+      }
+    },
+    series: [{
+      minTickInterval: <%= 1 %>,
+      pointStart: <%= 7.days.ago.day %>,
+      data: <%= @seven_day_sales %>
+    }]
+  });
+});
+</script>
+<div class="content-block">
+<h1><%= @shop.name %> Restaurant Stats</h1>
+<br>
+<div id="orders_chart">
+  </div>
+</div>
+

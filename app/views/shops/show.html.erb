@@ -17,12 +17,16 @@
       <iframe src="<%= @google_maps_url %>"></iframe>
     </div>
   </div>
+  <%= form_for [@shop,@order], url: shop_orders_path(@shop), method: :create do |f|  %>
+
+  <p>
+    <%= f.label :table_number %><br>
+    <%= f.text_field :table_number %>
+  </p>
+  <p>
+
+    <%= f.submit  %>
+  </p>
+<% end %>
   <%= link_to 'view menu', shop_items_path(@shop), class: "button" %>
-  <% if user_signed_in? %>
-    <% if @shop.editable_by?(current_user) %>
-    </br>
-    <%= link_to 'create menu', new_shop_item_path(@shop) %>
-    <%= button_to 'edit restaurant', edit_shop_path(@shop), method: :get %>
-    <% end %>
-  <% end %>
 </div>

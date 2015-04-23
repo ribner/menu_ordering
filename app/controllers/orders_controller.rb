@@ -22,11 +22,13 @@ before_action :find_shop, only: [:index, :create]
 
   def create
     @table_number = params[:order][:table_number]
-    @order = @shop.orders.where("paid = ? and table_number = ?", false, @table)[0]
+    @order = @shop.orders.where(paid: false)[0]
     if @order == nil
       @order = current_user.orders.new(shop_id: params[:shop_id], table_number: @table_number)
       @order.save
       flash[:notice] = "New Party Created"
+    else
+      flash[:notice] = "Order Already Open"
     end
     redirect_to shop_items_path(@shop)
   end
