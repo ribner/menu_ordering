@@ -1,10 +1,21 @@
-<div class="shop-master-block">
-  <h1><%= @shop.name %></h1>
-  <hr>
-  <div class="row">
-    <div class="large-6 columns">
-      <%= image_tag(@shop.check_photo) %>
-      <p>Address: <%= @shop.street_address %></p>
+</div>
+
+  <div class="upper-block">
+
+<div class="row">
+      <div class="small-4 columns">
+        <%= image_tag("meni-large.png") %>
+      </div>
+      <div class="small-4 small-offset-8 columns">
+        <h3><%= @shop.name %></h3>
+
+      </div>
+    </div>
+  </div>
+  <div class="black-block">
+<div class="row">
+  <div class="small-8 columns">
+     <p>Address: <%= @shop.street_address %></p>
       <p>City: <%= @shop.city %></p>
       <p>State: <%= @shop.state %></p>
       <p>Zip: <%= @shop.zip_code %></p>
@@ -12,12 +23,11 @@
       <p>Reservations: <%= @shop.reservations ? "Yes" : "No" %></p>
       <p>Delivery: <%= @shop.delivery ? "Yes" : "No" %></p>
       <p>Phone: <%= @shop.phone %></p>
-    </div>
-    <div class="large-6 columns">
-      <iframe src="<%= @google_maps_url %>"></iframe>
-    </div>
   </div>
-  <%= form_for [@shop,@order], url: shop_orders_path(@shop), method: :create do |f|  %>
+
+      <div class="small-4 columns">
+
+        <%= form_for [@shop,@order], url: shop_orders_path(@shop), method: :create do |f|  %>
 
   <p>
     <%= f.label :table_number %><br>
@@ -25,8 +35,14 @@
   </p>
   <p>
 
-    <%= f.submit  %>
+    <%= f.submit 'open order', class: "button" %>
   </p>
 <% end %>
-  <%= link_to 'view menu', shop_items_path(@shop), class: "button" %>
-</div>
+<%= link_to 'view menu', shop_items_path(@shop), class: "button" %>
+      </div>
+    </div>
+  </div>
+
+
+
+
