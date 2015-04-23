@@ -1,5 +1,7 @@
 module Admin
   class ChartsController < ApplicationController
+    before_action :authorize_admin
+
     def index
       @shop = Shop.find(params[:shop_id])
       end_date = 0
@@ -27,6 +29,11 @@ module Admin
     def total_price
       self.items.sum(:price)
     end
+
+    def authorize_admin
+      redirect_to new_user_session_path unless current_user.admin
+    end
+
   end
 end
 
