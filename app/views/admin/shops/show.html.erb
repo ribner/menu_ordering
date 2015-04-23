@@ -8,9 +8,9 @@
   </div>
 
 
-    <% if @shop.editable_by?(current_user) %>
+
     </br>
     <%= link_to 'create menu', new_shop_item_path(@shop) %>
     <%= button_to 'edit restaurant', edit_shop_path(@shop), method: :get %>
-    <% end %>
+    <%= link_to 'view weeks sales by day', admin_shop_charts_path(@shop) %>
 </div>
