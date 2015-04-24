@@ -18,93 +18,93 @@
 
  @import url(http://fonts.googleapis.com/css?family=Questrial);
  @import url(http://fonts.googleapis.com/css?family=Poiret+One);
- .menu-item-block {
-  border: 1px solid ;
-  border-color: #D8D8D8 ;
-  padding:8px;
-  margin:10px;
- }
- .home-bg {
-   background-image: image-url("warsaw.jpg");
 
-   background-repeat:no-repeat;
-   background-size: cover;
-   height: 100%;
-   color: #FFF !important;
-   text-align: right;
-   h3 {
-    margin-top: 10px;
-    color: orange !important;
+$darkest-color: #111;
+$main-orange: #f07005;
+$extra-style-font: 'Poiret One', cursive;
+$lightest-non-white: #F8F8F8;
+$light-non-white: #E8E8E8;
 
-  }
+
+h1, h2, h3, h4, h5{
+  font-family: $extra-style-font;
+}
+
+body {
+  background-color: $darkest-color;
+  font-family: 'Questrial', sans-serif;
+}
+
+.secondary-bg {
+background-color: $light-non-white;
+}
+
+.menu-item-block {
+border: 1px solid ;
+border-color: #D8D8D8 ;
+padding:8px;
+margin:10px;
+}
+
+.home-bg {
+ background-image: image-url("warsaw.jpg");
+ background-repeat:no-repeat;
+ background-size: cover;
+ height: 100%;
+ color: #FFF !important;
+ text-align: right;
+ h3 {
+  margin-top: 10px;
+  color: $main-orange;
+
+}
+
 }
 .upper-block {
-  background-color: #111;
+  background-color: $darkest-color;
   height: 33vh;
   h3 {
-    color: #f07005;
+    color: $main-orange;
     padding-bottom: 10px;
   }
 }
-p {
-  color: #f07005;
-}
+
 .black-block {
-  background-color: #111;
-  height: 100vh;
-  h3 h2 h1 p {
-    color: #f07005;
+  background-color: $darkest-color;
+  h3, h2, h1, p {
+    color: $main-orange;
     padding-bottom: 10px;
   }
 }
+.lower-block {
+  background-color: $darkest-color;
+  height: 33vh;
+}
+
 .middle-block {
   height: 33vh;
 }
-.lower-block {
-  background-color: #111;
-  height: 33vh;
+
+
+.button {
+background-color: rgba(0, 0, 0, 0.0); ;
+color: $main-orange;
+border: 2px solid ;
+border-color: $main-orange;
+padding:8px;
+margin-top:10px;
+
 }
 
-  .button {
-  background-color: rgba(0, 0, 0, 0.0); ;
-  color: #f07005;
-  border: 2px solid ;
-  border-color: #f07005;
-  padding:8px;
-  margin-top:10px;
-
-  }
-
-h1 {
-  font-family: 'Poiret One', cursive;
-}
-h2 {
-  font-family: 'Poiret One', cursive;
-}
-
-h3 {
-  font-family: 'Poiret One', cursive;
-}
-h4 {
-  font-family: 'Poiret One', cursive;
-}
-
-h5 {
-  font-family: 'Poiret One', cursive;
-}
-body {
-  background-color: #E8E8E8 ;
-  font-family: 'Questrial', sans-serif;
-}
 .top-bar .name h1 a {
-  color: #f07005 ;
+  color: $main-orange ;
 }
 
 .top-bar-section ul li > a {
-  color: #f07005 ;
+  color: $main-orange ;
 }
 .content-block {
-  background-color: #F8F8F8 ;
+  background-color: $lightest-non-white;
   padding: 15px;
   margin-top: 15px;
   border-style: solid;

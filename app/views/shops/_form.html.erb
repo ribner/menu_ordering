@@ -47,14 +47,10 @@
     <%= f.select :delivery, [['No', false], ['Yes', true]] %>
   </p>
 
-  <div class="field">
-    <%= f.label :photo %><br />
-    <%= f.file_field :photo %>
-  </div>
 
   <p>
 
-    <%= f.submit %>
+    <%= f.submit 'create restaurant', class: "button" %>
   </p>
 <% end %>
 </div>
