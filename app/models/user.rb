@@ -11,4 +11,10 @@ class User < ActiveRecord::Base
     self.save
   end
 
+  def find_shop
+    @shop = Shop.where(user_id: self.id)[0]
+  end
+
 end
+
+

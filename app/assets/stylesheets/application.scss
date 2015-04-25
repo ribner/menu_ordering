@@ -16,8 +16,8 @@
 
  */
 
- @import url(http://fonts.googleapis.com/css?family=Questrial);
- @import url(http://fonts.googleapis.com/css?family=Poiret+One);
+ @import url(https://fonts.googleapis.com/css?family=Questrial);
+ @import url(https://fonts.googleapis.com/css?family=Poiret+One);
 
 $darkest-color: #111;
 $main-orange: #f07005;
@@ -35,8 +35,39 @@ body {
   font-family: 'Questrial', sans-serif;
 }
 
+.white-container {
+  border: 30px solid ;
+  border-color: $lightest-non-white;
+  h4, h3 {
+  font-family: 'Questrial', sans-serif;
+  color: $main-orange;
+  font-weight: lighter;
+  }
+}
+.upper-padding {
+  padding-top: 100px;
+  padding-bottom: 20px;
+}
 .secondary-bg {
 background-color: $light-non-white;
+}
+
+.shop-info {
+  padding-top: 40px;
+  p {
+  margin: 0;
+}
+}
+
+
+.show-title {
+  position: relative;
+  margin-bottom: 30px;
+}
+.show-title span {
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
 
 .menu-item-block {
@@ -62,7 +93,6 @@ margin:10px;
 }
 .upper-block {
   background-color: $darkest-color;
-  height: 33vh;
   h3 {
     color: $main-orange;
     padding-bottom: 10px;
@@ -79,6 +109,10 @@ margin:10px;
 .lower-block {
   background-color: $darkest-color;
   height: 33vh;
+
+}
+.home-button-spacing {
+  padding-top: 20px;
 }
 
 .middle-block {
