@@ -17,12 +17,14 @@ $(function() {
       }
     },
     series: [{
-      minTickInterval: <%= 1 %>,
+      minTickInterval: 1,
       pointStart: <%= 7.days.ago.day %>,
       data: <%= @seven_day_sales %>
     }]
   });
 });
+
+
 </script>
 <div class="content-block">
 <h1><%= @shop.name %> Restaurant Stats</h1>

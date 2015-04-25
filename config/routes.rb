@@ -14,7 +14,8 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :shops do
       resources :orders
-      resources :charts
+      resources :charts, only: [:index]
+      resources :barcharts, only: [:index]
     end
   end
 end

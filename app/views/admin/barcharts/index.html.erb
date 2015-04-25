@@ -1,0 +1,12 @@
+<%= javascript_include_tag 'https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js' %>
+<script type="text/javascript" charset="utf-8">
+var itemArray = <%= raw @item_array %>
+var totalItemRevenue = <%= raw @total_item_revenue %>
+</script>
+<div class="content-block">
+<h1><%= @shop.name %> Restaurant Stats</h1>
+<br>
+<div id="items_chart">
+
+  </div>
+</div>
