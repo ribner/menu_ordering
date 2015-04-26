@@ -3,10 +3,25 @@
 var itemArray = <%= raw @item_array %>
 var totalItemRevenue = <%= raw @total_item_revenue %>
 </script>
-<div class="content-block">
-<h1><%= @shop.name %> Restaurant Stats</h1>
-<br>
-<div id="items_chart">
 
+<div class="upper-block">
+
+<div class="row show-title">
+      <div class="small-4 columns">
+        <%= image_tag("meni-large.png") %>
+      </div>
+
+        <h1><span><%= @shop.name %></span></h1>
+
+
+
+    </div>
   </div>
+<div class="content-block">
+
+<br>
+<div class="row">
+<div id="items_chart">
+  </div>
+</div>
 </div>
