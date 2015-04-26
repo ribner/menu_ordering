@@ -7,7 +7,7 @@
         <%= image_tag("meni-large.png") %>
       </div>
 
-        <h3><span><%= @shop.name %></span></h3>
+        <h1><span><%= @shop.name %></span></h1>
 
 
 
@@ -18,16 +18,16 @@
     <div class="small-6 columns">
 <%= image_tag(@shop.photo.url) %>
   </div>
-  <div class="small-6 columns">
+  <div class="small-6 columns description">
     <h3 class="text-center"> Description </h3>
-        <h4><%= @shop.description %></h4>
+        <h5 class="text-center"><%= @shop.description %></h5>
 
       </div>
   </div>
 
 <div class="row shop-info">
   <div class="small-3 columns">
-     <p>Address: <%= @shop.street_address %></p>
+     <p> Address: <%= @shop.street_address %></p>
       <p>City: <%= @shop.city %></p>
       <p>State: <%= @shop.state %></p>
       <p>Zip: <%= @shop.zip_code %></p>
@@ -38,7 +38,7 @@
       <p>Phone: <%= @shop.phone %></p>
   </div>
 
-      <div class="small-4 columns">
+      <div class="small-4 columns table-form">
 
         <%= form_for [@shop,@order], url: shop_orders_path(@shop), method: :create do |f|  %>
 
