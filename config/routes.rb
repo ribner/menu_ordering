@@ -9,8 +9,6 @@ Rails.application.routes.draw do
     resources :orderjoins
   end
 
-
-
   namespace :admin do
     resources :shops do
       resources :orders
