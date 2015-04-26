@@ -48,13 +48,14 @@
 
     <% end %>
 </div>
+<div class="row"><hr></div>
 <div class="row">
+  <div class="padding-right">
     <% if @shop.user == current_user %>
     <%= link_to 'add item', new_shop_item_path(@shop), class: "button" %>
     <% end %>
 
-
-    <%= link_to 'view order', shop_order_path(@shop,@shop), class: "button" %>
+    <%= link_to 'view order', shop_order_path(@shop,@shop), class: "button right" %>
 
 </div>
 </div>

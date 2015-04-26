@@ -15,6 +15,12 @@ class User < ActiveRecord::Base
     @shop = Shop.where(user_id: self.id)[0]
   end
 
+  def this_user
+    if current_user
+      return current_user
+    end
+  end
+
 end
 
 

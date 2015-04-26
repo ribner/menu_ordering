@@ -8,7 +8,7 @@
 
 r_and_d = [true, false]
 
-user = User.new(email: "aa@seed.com", password: "seedpassword")
+user = User.new(email: "asd@seed.com", password: "seedpassword")
 user.save!
 
 client = Yelp::Client.new({ consumer_key: ENV['CONSUMER_KEY'],
