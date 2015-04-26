@@ -26,7 +26,7 @@ before_action :find_shop, only: [:index, :create]
       flash[:notice] = "must enter table number"
       redirect_to shop_path(@shop)
     else
-      @order = @shop.orders.where(paid: false)[0]
+      @order = @shop.orders.where(paid: false, user_id: current_user)[0]
       if @order == nil
         @order = current_user.orders.new(shop_id: params[:shop_id], table_number: @table_number)
         @order.save
