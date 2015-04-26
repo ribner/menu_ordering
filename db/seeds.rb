@@ -7,8 +7,8 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 r_and_d = [true, false]
-
-user = User.new(email: "aa@seed.com", password: "seedpassword")
+email = ["fa@seed.com", "ba@seed.com" , "fffra@seed.com", "new@seed.com"]
+user = User.new(email: email.sample , password: "seedpassword")
 user.save!
 
 client = Yelp::Client.new({ consumer_key: ENV['CONSUMER_KEY'],
