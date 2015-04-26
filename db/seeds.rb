@@ -1,14 +1,8 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+
 
 r_and_d = [true, false]
 
-email = ["fa@seed.com", "ba@seed.com" , "fffra@seed.com", "new@seed.com"]
+email = ["fsa@seed.com", "bsa@seed.com" , "fffsra@seed.com", "nsew@seed.com"]
 user = User.new(email: email.sample , password: "seedpassword")
 
 user.save!
@@ -39,12 +33,48 @@ business_info.each do |business|
   )
 end
 
+MENU_ITEMS = ["pasta", "pizza", "chicken parm", "gumbo shrimp", "garden salad", "pizza", "steak", "burger"]
 
-menu_items = ["pasta", "pizza", "chicken parm", "gumbo shrimp", "garden salad", "pizza", "steak", "burger"]
-
-menu_items.each do |item|
-  Item.find_or_create_by!(
-    shop_id: 1 ,name: item, description: "beef vermicelli with snipata sauce covered in a spicy aflredo tamato with milk cheese",
-    price: "5", cost: "2" )
+MENU_ITEMS.each do |item|
+  price = (8..20).to_a.sample
+  cost = (3..(price / 2).floor).to_a.sample
+  Item.create(
+    shop_id: 1,
+    name: item,
+    description: "beef vermicelli with snipata sauce covered in a spicy aflredo tamato with milk cheese",
+    price: price,
+    cost: cost
+  )
 end
+
+USER_IDS = [2 ,3 ,4]
+TABLES = [1, 2, 3, 4, 5]
+
+shop = Shop.find(1)
+USER_IDS.each do |uid|
+  user = User.find(uid)
+  (1..10).each do |i|
+    order_time = i.days.ago
+    order = Order.create(
+      user_id: 2,
+      shop: shop,
+      table_number: TABLES.sample,
+    )
+    item_count = (4..8).to_a.sample
+    item_count.times do |item_number|
+      item = shop.items.sample
+      orderjoin = Orderjoin.create(
+        item: item,
+        order: order
+      )
+    order.created_at = order_time
+    orderjoin.created_at = order_time
+    order.save
+    orderjoin.save
+    puts orderjoin.created_at
+    end
+    puts order.created_at
+  end
+end
+
 

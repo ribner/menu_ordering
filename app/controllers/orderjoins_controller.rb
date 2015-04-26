@@ -5,6 +5,7 @@ before_action :authorize_user
     @shop = params[:shop_id]
     @item_id = params[:item]
     @order = current_user.orders.where(paid: false )[0]
+    binding.pry
     if @order == nil
         flash[:notice] = "You must first record your table number"
     else
@@ -26,6 +27,7 @@ before_action :authorize_user
   end
 
   def destroy
+    #needs [0] at end of below statement ?
     @orderjoin = Orderjoin.where("item_id = ? and order_id = ?", params[:item_id], params[:order_id])
     Orderjoin.delete(@orderjoin.first.id)
     redirect_to(:back)
