@@ -18,28 +18,64 @@
 
  @import url(https://fonts.googleapis.com/css?family=Questrial);
  @import url(https://fonts.googleapis.com/css?family=Poiret+One);
+ @import url(https://fonts.googleapis.com/css?family=Quicksand);
 
 $darkest-color: #111;
 $main-orange: #f07005;
+$alt-orange: #f0a205;
 $extra-style-font: 'Poiret One', cursive;
 $lightest-non-white: #F8F8F8;
 $light-non-white: #E8E8E8;
 
+p {
+  margin: 0;
+}
 
-h1, h2, h3, h4, h5{
+h1, h2, h3 {
   font-family: $extra-style-font;
+}
+.description {
+  padding-top: 30px;
+}
+
+.icons img {
+  height: 100px;
+  width: 100px;
+  margin-left:50px;
+  margin-right:50px;
 }
 
 body {
   background-color: $darkest-color;
-  font-family: 'Questrial', sans-serif;
+  font-family: 'Quicksand', sans-serif;
+}
+
+
+
+.flash {
+  background-color: $main-orange;
+  color: $darkest-color;
+}
+
+.shop-list {
+  border: 1px solid ;
+  border-color: #E0e0e0;
+  margin: 5px;
+  margin-top: 10px;
+  padding: 10px;
+}
+.table-form label {
+  color: $main-orange;
+  padding-bottom: 8px;
+  font-size: 18px;
 }
 
 .white-container {
-  border: 30px solid ;
-  border-color: $lightest-non-white;
-  h4, h3 {
-  font-family: 'Questrial', sans-serif;
+  padding-left: 0px;
+  border: 10px solid ;
+  border-color: $alt-orange;
+  h3, h4, h5 {
+  font-family: 'Quicksand', sans-serif;
   color: $main-orange;
   font-weight: lighter;
   }
@@ -63,6 +99,10 @@ background-color: $light-non-white;
 .show-title {
   position: relative;
   margin-bottom: 30px;
+  color: $main-orange;
+  h1, h2, h3 {
+  color: $main-orange;
+  }
 }
 .show-title span {
   position: absolute;
@@ -78,19 +118,16 @@ margin:10px;
 }
 
 .home-bg {
- background-image: image-url("warsaw.jpg");
- background-repeat:no-repeat;
- background-size: cover;
  height: 100%;
  color: #FFF !important;
  text-align: right;
  h3 {
   margin-top: 10px;
   color: $main-orange;
-
+}
 }
 
-}
+
 .upper-block {
   background-color: $darkest-color;
   h3 {
@@ -117,6 +154,10 @@ margin:10px;
 
 .middle-block {
   height: 33vh;
+  background-image: image-url("warsaw2.jpg");
+ background-repeat:no-repeat;
+ background-size: cover;
+ background-position: bottom;
 }
 
 
@@ -142,9 +183,11 @@ margin-top:10px;
   padding: 15px;
   margin-top: 15px;
   border-style: solid;
-  border-color: #f0a205;
-  border-width: 1px;
+  border-color: $alt-orange;
+  border-width: 12px;
   margin-bottom: 15px;
+  border-left:none;
+  border-right: none;
 }
 
 iframe {

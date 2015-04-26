@@ -22,15 +22,20 @@ before_action :find_shop, only: [:index, :create]
 
   def create
     @table_number = params[:order][:table_number]
-    @order = @shop.orders.where(paid: false)[0]
-    if @order == nil
-      @order = current_user.orders.new(shop_id: params[:shop_id], table_number: @table_number)
-      @order.save
-      flash[:notice] = "New Party Created"
+    if @table_number == ""
+      flash[:notice] = "must enter table number"
+      redirect_to shop_path(@shop)
     else
-      flash[:notice] = "Order Already Open"
+      @order = @shop.orders.where(paid: false)[0]
+      if @order == nil
+        @order = current_user.orders.new(shop_id: params[:shop_id], table_number: @table_number)
+        @order.save
+        flash[:notice] = "New Party Created"
+      else
+        flash[:notice] = "Order Already Open"
+      end
+      redirect_to shop_items_path(@shop)
     end
-    redirect_to shop_items_path(@shop)
   end
 
   private

@@ -1,11 +1,11 @@
+
 <div class="content-block">
   <div class="row">
 
     <% @shops.each do |shop| %>
       <div class="large-6 columns">
-        <%= image_tag(shop.photo.url) %>
-
-        <p><%= link_to shop.name , shop_path(shop) %></p>
+        <div class="shop-list">
+        <h3><%= link_to shop.name , shop_path(shop) %></h3>
         <p>address: <%= shop.street_address %></p>
         <p>city: <%= shop.city %></p>
         <p>state: <%= shop.state %></p>
@@ -14,6 +14,7 @@
         <p>delivery: <%= shop.delivery ? "Yes" : "No" %></p>
         <p>phone: <%= shop.phone %></p>
       </div>
+    </div>
     <% end %>
 
   </div>

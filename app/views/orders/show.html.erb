@@ -1,4 +1,19 @@
+</div>
+<div class="upper-block">
+
+  <div class="row show-title">
+    <div class="small-4 columns">
+      <%= image_tag("meni-large.png") %>
+    </div>
+
+    <h3><span><%= @order.shop.name %></span></h3>
+
+
+
+  </div>
+</div>
 <div class="content-block">
+  <div class="row">
   <h1>Your Order</h1>
   <p><%= @order.order_status %><p>
     <p><%= @order.paid ? "paid" : "unpaid" %><p>
@@ -15,6 +30,7 @@
        <% if @order.paid %>
        <h4> Thank you for dining with us</h4>
        <% else %>
-       <%= link_to 'pay order', edit_shop_order_path(@order.shop, @order, paid: true) %>
+       <%= link_to 'pay order', edit_shop_order_path(@order.shop, @order, paid: true ) %>
        <% end %>
      </div>
+   </div>
