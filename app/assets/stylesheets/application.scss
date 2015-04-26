@@ -15,7 +15,7 @@
  *= require foundation_and_overrides
 
  */
-
+@import 'foundation-icons';
  @import url(https://fonts.googleapis.com/css?family=Questrial);
  @import url(https://fonts.googleapis.com/css?family=Poiret+One);
  @import url(https://fonts.googleapis.com/css?family=Quicksand);
@@ -41,16 +41,25 @@ h1, h2, h3 {
 .icons img {
   height: 100px;
   width: 100px;
-  margin-left:50px;
-  margin-right:50px;
+  margin-left: 50px;
+  margin-right: 50px;
 }
 
 body {
   background-color: $darkest-color;
   font-family: 'Quicksand', sans-serif;
 }
-
-
+.footer i {
+  font-size: 28px;
+  color: $main-orange;
+}
+.padding-right {
+  margin-right: 58px;
+}
+.footer p, a{
+  color: $main-orange;
+  font-size: 1em;
+}
 
 .flash {
   background-color: $main-orange;
@@ -63,6 +72,8 @@ body {
   margin: 5px;
   margin-top: 10px;
   padding: 10px;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.16), 0 2px    5px 0 rgba(0, 0, 0, 0.26);
+
 }
 .table-form label {
   color: $main-orange;
@@ -145,7 +156,6 @@ margin:10px;
 }
 .lower-block {
   background-color: $darkest-color;
-  height: 33vh;
 
 }
 .home-button-spacing {
