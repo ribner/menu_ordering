@@ -2,10 +2,11 @@
 
 r_and_d = [true, false]
 
-email = ["fsa@seed.com", "bsa@seed.com" , "fffsra@seed.com", "nsew@seed.com"]
-user = User.new(email: email.sample , password: "seedpassword")
-
-user.save!
+email = ["fsass@seed.com", "bssdsa@seed.com" , "ffsdsdsdsdra@seed.com", "nsewsdd@seed.com", "newsds@seed.com", "nswsdsd@seed.com"]
+email.each do |mail|
+  user = User.new(email: mail , password: "seedpassword")
+  user.save!
+end
 
 client = Yelp::Client.new({ consumer_key: ENV['CONSUMER_KEY'],
                             consumer_secret: ENV['CONSUMER_SECRET'],
