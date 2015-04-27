@@ -1,28 +1,15 @@
 == README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Restaurant Menu Ordering / Point of Sale System
+* This app allows restaurant owners to register their restuarant along with their menu
+* The owner can upload images (via carrierwave), restaurant data, and the menu (by csv upload or by form).
+* Users can log in, view the menu, and place an order directly through the menu
+* From the admin level, all the orders can be viewed by day, or by open order.
+* From the admin level, orders can be can be upated as fulfilled or cleared if needed.
+* Additionally the owner can view the restuarant statistics outputting in Javascript graphs 
+    - revenue by day / revenue by item etc.
+    
+You can view the live app here:
+-------------------------------
+https://meniapp.herokuapp.com/
+-------------------------------
+*** To become an admin and explore those features you will first need to create a restaurant
