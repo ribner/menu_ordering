@@ -10,6 +10,7 @@ module Admin
     end
 
     private
+
     def n_day_sales(shop, start_date, end_date)
       week_array = (end_date..start_date).to_a
       seven_day_totals_array = []

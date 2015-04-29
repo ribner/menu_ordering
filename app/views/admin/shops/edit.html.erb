@@ -1,0 +1,8 @@
+<div class="content-block">
+  <div class="row">
+    <h1>Edit Restaurant</h1>
+    <%= render 'form' %>
+    <%= link_to 'Delete', admin_shop_path(@shop), method: :delete, class: "button" %>
+    <%= link_to 'Back', admin_shop_path(@shop), class: "button" %>
+  </div>
+</div>

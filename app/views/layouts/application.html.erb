@@ -17,43 +17,42 @@
     <section class="top-bar-section">
       <ul class="right">
         <% if current_user && current_user.admin%>
-          <% admin_shop = current_user.find_shop %>
+        <% admin_shop = current_user.find_shop %>
         <li><%= link_to 'Admin Section',  admin_shop_path(current_user.find_shop.id) %></li>
 
         <% end %>
         <li><%= link_to 'Restaurant List', shops_path %></li>
         <%- if current_user -%>
-          <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+        <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
         <%- else -%>
-          <li><%= link_to 'Sign Up', new_user_registration_path %></li>
-          <li><%= link_to 'Sign In', new_user_session_path %></li>
+        <li><%= link_to 'Sign Up', new_user_registration_path %></li>
+        <li><%= link_to 'Sign In', new_user_session_path %></li>
         <%- end -%>
       </ul>
     </section>
   </nav>
 
-
   <%- flash.each do |key, value| -%>
-    <div class="flash flash-<%= key %>">
-      <%= value %>
-    </div>
+  <div class="flash flash-<%= key %>">
+    <%= value %>
+  </div>
   <%- end -%>
 
   <%= yield %>
- <!-- what is this div closing ?? -->
+
 </div>
-  <div class="row footer">
-    <div class="large-8 columns">
-      <p>design by <a href="http://elliottribner.com">elliott ribner</a></p>
-    </div>
-    <div class="large-4 columns">
-<a href="https://www.linkedin.com/in/elliottribner"><i class="fi-social-linkedin"></i></a>
-<a href="https://github.com/elliott-ribner"><i class="fi-social-github"></i></a>
-<i class="fi-social-facebook"></i>
-<a href="http://elliottribner.com/"><i class="fi-torso-business"></i></a>
-</div>
+<div class="row footer">
+  <div class="large-8 columns">
+    <p>design by <a href="http://elliottribner.com">elliott ribner</a></p>
   </div>
-  <%= javascript_include_tag 'application' %>
-  <%= yield :extra_footer %>
+  <div class="large-4 columns">
+    <a href="https://www.linkedin.com/in/elliottribner"><i class="fi-social-linkedin"></i></a>
+    <a href="https://github.com/elliott-ribner"><i class="fi-social-github"></i></a>
+    <i class="fi-social-facebook"></i>
+    <a href="http://elliottribner.com/"><i class="fi-torso-business"></i></a>
+  </div>
+</div>
+<%= javascript_include_tag 'application' %>
+<%= yield :extra_footer %>
 </body>
 </html>

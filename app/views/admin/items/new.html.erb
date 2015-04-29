@@ -1,4 +1,5 @@
 <div class="content-block">
+ <div class="row">
   <h1> create menu </h1>
   <%= render 'form' %>
   <div>
@@ -6,9 +7,10 @@
     <h3>Import a CSV File</h3>
     <%= form_tag import_shop_items_path(@shop), multipart: true do %>
     <%= file_field_tag :file %>
-    <%= submit_tag "Import CSV" %>
+    <%= submit_tag "Import CSV" , class: "button"%>
     <% end %>
   </div>
 
-  <%= link_to 'view menu', shop_items_path(@shop) %>
+  <%= link_to 'view menu', admin_shop_items_path(@shop), class: "button" %>
+</div>
 </div>

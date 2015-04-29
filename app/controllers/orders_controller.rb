@@ -1,9 +1,9 @@
 class OrdersController < ApplicationController
-before_action :authorize_user
-before_action :find_shop, only: [:index, :create]
+  before_action :authorize_user
+  before_action :find_shop, only: [:index, :create, :show]
 
   def show
-    @order = current_user.orders.where(paid: false)[0]
+    @order = @shop.orders.where(paid: false, user_id: current_user)[0]
     unless @order
       @order = current_user.orders.where(paid: true).last
     end
@@ -12,13 +12,12 @@ before_action :find_shop, only: [:index, :create]
 
   def edit
     @order = Order.find(params[:id])
-  	if params[:paid]
-  		@order.paid = true
+    if params[:paid]
+      @order.paid = true
       @order.save
-  	end
-  	redirect_to(:back)
+    end
+    redirect_to(:back)
   end
-
 
   def create
     @table_number = params[:order][:table_number]
@@ -39,8 +38,9 @@ before_action :find_shop, only: [:index, :create]
   end
 
   private
+
   def find_shop
-      @shop = Shop.find(params[:shop_id])
+    @shop = Shop.find(params[:shop_id])
   end
 
   def authorize_user

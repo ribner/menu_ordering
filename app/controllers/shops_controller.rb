@@ -1,5 +1,5 @@
 class ShopsController < ApplicationController
-before_action :authorize_user
+  before_action :authorize_user
 
   def new
     @shop = current_user.shops.new
@@ -20,37 +20,12 @@ before_action :authorize_user
   def show
     @order = Order.new
     @shop = Shop.find(params[:id])
-    @google_maps_url = %Q{
-      https://www.google.com/maps/embed/v1/place?key=
-      #{ENV["GOOGLE_MAPS_API_KEY"]}&q=#{@shop.parse_for_google_maps}
-    }
-  end
-
-  def edit
-    @shop = Shop.find(params[:id])
   end
 
   def index
-      @shops = Shop.all
+    @shops = Shop.all
   end
 
-  def update
-    @shop = Shop.find(params[:id])
-    if @shop.update(shop_params)
-      flash[:notice] = "Restaurant updated!"
-      redirect_to @shop
-    else
-      flash[:errors] = @shop.errors.full_messages
-      render :edit
-    end
-  end
-
-  def destroy
-    @shop = Shop.find(params[:id])
-    @shop.destroy
-    flash[:notice] = "Restaurant deleted!"
-    redirect_to root_path
-  end
 
   private
 

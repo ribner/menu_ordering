@@ -1,58 +1,57 @@
 <div class="upper-block">
 
-<div class="row show-title">
-      <div class="small-4 columns">
-        <%= image_tag("meni-large.png") %>
-      </div>
-
-        <h1><span><%= @shop.name %></span></h1>
-
-
-
+  <div class="row show-title">
+    <div class="small-4 columns">
+      <%= image_tag("meni-large.png") %>
     </div>
+
+    <h1><span><%= @shop.name %></span></h1>
+
   </div>
-  <div class="black-block">
+</div>
+<div class="black-block">
   <div class="row white-container">
     <div class="small-6 columns">
-<%= image_tag(@shop.photo.url) %>
-  </div>
-  <div class="small-6 columns description">
-    <h3 class="text-center"> Description </h3>
-        <h5 class="text-center"><%= @shop.description %></h5>
+      <%= image_tag(@shop.photo.url) %>
+    </div>
+    <div class="small-6 columns description">
+      <h3 class="text-center"> Description </h3>
+      <h5 class="text-center"><%= @shop.description %></h5>
 
-      </div>
+    </div>
   </div>
 
-<div class="row shop-info">
-  <div class="small-3 columns">
+  <div class="row shop-info">
+    <div class="small-3 columns">
      <p> Address: <%= @shop.street_address %></p>
-      <p>City: <%= @shop.city %></p>
-      <p>State: <%= @shop.state %></p>
-      <p>Zip: <%= @shop.zip_code %></p>
-    </div>
-  <div class="small-3 columns">
-      <p>Reservations: <%= @shop.reservations ? "Yes" : "No" %></p>
-      <p>Delivery: <%= @shop.delivery ? "Yes" : "No" %></p>
-      <p>Phone: <%= @shop.phone %></p>
+     <p>City: <%= @shop.city %></p>
+     <p>State: <%= @shop.state %></p>
+     <p>Zip: <%= @shop.zip_code %></p>
+   </div>
+   <div class="small-3 columns">
+    <p>Reservations: <%= @shop.reservations ? "Yes" : "No" %></p>
+    <p>Delivery: <%= @shop.delivery ? "Yes" : "No" %></p>
+    <p>Phone: <%= @shop.phone %></p>
   </div>
 
-      <div class="small-4 columns table-form">
+  <div class="small-4 columns table-form">
 
-        <%= form_for [@shop,@order], url: shop_orders_path(@shop), method: :create do |f|  %>
+    <%= form_for [@shop,@order], url: shop_orders_path(@shop), method: :create do |f|  %>
 
-  <p>
-    <%= f.label :table_number %>
-    <%= f.text_field :table_number %>
-  </p>
-  <p>
+    <p>
+      <%= f.label :table_number %>
+      <%= f.text_field :table_number %>
+    </p>
+    <p>
 
-    <%= f.submit 'open order', class: "button" %> &nbsp;&nbsp;<%= link_to 'view menu', shop_items_path(@shop), class: "button" %>
-  </p>
-<% end %>
+      <%= f.submit 'Menu', class: "button" %>
+    </p>
+    <% end %>
 
-      </div>
-    </div>
   </div>
+  <hr>
+</div>
+</div>
 
 
 

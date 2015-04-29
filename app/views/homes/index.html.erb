@@ -1,8 +1,7 @@
-
 <div class="home-bg">
   <div class="upper-block">
 
-<div class="row upper-padding">
+    <div class="row upper-padding">
       <div class="small-4 columns">
         <%= image_tag("meni-large.png") %>
       </div>
@@ -16,19 +15,19 @@
 
   </div>
   <div class="lower-block">
-<div class="row">
+    <div class="row">
       <div class="small-8 small-offset-4 columns">
         <div class="home-button-spacing">
           <% if current_user && current_user.admin%>
           <% admin_shop = current_user.find_shop %>
           <%= link_to 'admin section', admin_shop_path(admin_shop.id) , class: "button" %>&nbsp;&nbsp;
           <% end %>
-        <%= link_to 'create restaurant', new_shop_path , class: "button" %>&nbsp;&nbsp;
-<%= link_to 'restaurant list', shops_path, class: "button"%>
-</div>
+          <%= link_to 'create restaurant', new_shop_path , class: "button" %>&nbsp;&nbsp;
+          <%= link_to 'restaurant list', shops_path, class: "button"%>
+        </div>
       </div>
     </div>
   </div>
-  </div>
+</div>
 <div class="row">
 </div>
