@@ -2,6 +2,7 @@ module Admin
   class OrdersController < ApplicationController
     before_action :authorize_admin
     before_action :find_shop, only: [:index]
+
     def index
       if params[:all]
         get_all_orders(@shop)
@@ -37,7 +38,7 @@ module Admin
     end
 
     def authorize_admin
-      redirect_to new_user_session_path unless current_user.admin
+      redirect_to root_path unless current_user.admin
     end
 
     def get_todays_orders(shop)
@@ -51,7 +52,7 @@ module Admin
     def get_open_orders(shop)
       @unsorted_orders = shop.orders.where("order_status = ? or paid = ?", "submitted", false)
       @orders = @unsorted_orders.order("order_status ASC, paid ASC")
-  end
+    end
 
   end
 end

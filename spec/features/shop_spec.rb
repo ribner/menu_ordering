@@ -12,8 +12,6 @@ feature "user creates a restaurant", %Q{
     sign_in user
   end
 
-
-
   scenario "user creates new restaurant" do
     visit root_path
     click_on "create restaurant"
@@ -35,14 +33,14 @@ feature "user creates a restaurant", %Q{
     select("Massachusetts", from: "State")
     fill_in("Zip code", with: shop.zip_code)
     fill_in("Description", with: shop.description)
-    click_on("Create Shop")
+    click_on("create restaurant")
 
     expect(page).to have_content("Restaurant created!")
   end
 
   scenario "user proivdes invalid information" do
     visit new_shop_path
-    click_on("Create Shop")
+    click_on("create restaurant")
     expect(page).to have_content("Name can't be blank")
     expect(page).to have_content("Street address can't be blank")
     expect(page).to have_content("Zip code can't be blank")
@@ -63,12 +61,6 @@ feature "user creates a restaurant", %Q{
 end
 
 
-
-
-
-
-
-
 feature "user edits a shop they own", %Q{
   As a shop owner
   I want to edit my restaurant
@@ -81,7 +73,6 @@ feature "user edits a shop they own", %Q{
   scenario "owner edits a shop they own" do
     sign_in shop.user
     visit admin_shop_path(shop)
-    save_and_open_page
     page.should have_selector(:link_or_button, 'edit restaurant')
   end
 

@@ -2,10 +2,11 @@
 
 r_and_d = [true, false]
 
-email = ["fsa@seed.com", "bsa@seed.com" , "fffsra@seed.com", "nsew@seed.com"]
-user = User.new(email: email.sample , password: "seedpassword")
-
-user.save!
+email = ["fsxasds@seed.com", "bssddxsa@seed.com" , "ffsdsxddsdsdra@seed.com", "nxsedwsdd@seed.com", "newsdxds@seed.com", "nsdxsdsd@seed.com"]
+email.each do |mail|
+  user = User.new(email: mail , password: "seedpassword")
+  user.save!
+end
 
 client = Yelp::Client.new({ consumer_key: ENV['CONSUMER_KEY'],
                             consumer_secret: ENV['CONSUMER_SECRET'],
@@ -35,16 +36,18 @@ end
 
 MENU_ITEMS = ["pasta", "pizza", "chicken parm", "gumbo shrimp", "garden salad", "pizza", "steak", "burger"]
 
-MENU_ITEMS.each do |item|
-  price = (8..20).to_a.sample
-  cost = (3..(price / 2).floor).to_a.sample
-  Item.create(
-    shop_id: 1,
-    name: item,
-    description: "beef vermicelli with snipata sauce covered in a spicy aflredo tamato with milk cheese",
-    price: price,
-    cost: cost
-  )
+(1..10).each do |x|
+  MENU_ITEMS.each do |item|
+    price = (8..20).to_a.sample
+    cost = (3..(price / 2).floor).to_a.sample
+    Item.create(
+      shop_id: x,
+      name: item,
+      description: "beef vermicelli with snipata sauce covered in a spicy aflredo tamato with milk cheese",
+      price: price,
+      cost: cost
+    )
+  end
 end
 
 USER_IDS = [2 ,3 ,4]

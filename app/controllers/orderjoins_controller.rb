@@ -1,13 +1,12 @@
 class OrderjoinsController < ApplicationController
-before_action :authorize_user
+  before_action :authorize_user
 
   def create
-    @shop = params[:shop_id]
+    @shop = Shop.find(params[:shop_id])
     @item_id = params[:item]
-    @order = current_user.orders.where(paid: false )[0]
-    binding.pry
+    @order = @shop.orders.where(paid: false, user_id: current_user)[0]
     if @order == nil
-        flash[:notice] = "You must first record your table number"
+      flash[:notice] = "You must first record your table number"
     else
       @orderjoin = @order.orderjoins.new(item_id: params[:item_id])
       if @orderjoin.save
@@ -17,13 +16,8 @@ before_action :authorize_user
     redirect_to shop_items_path(@shop)
   end
 
-
   def show
     @order = Order.find(params[:id])
-  end
-
-  def edit
-
   end
 
   def destroy
@@ -32,6 +26,7 @@ before_action :authorize_user
     Orderjoin.delete(@orderjoin.first.id)
     redirect_to(:back)
   end
+
   private
 
   def authorize_user

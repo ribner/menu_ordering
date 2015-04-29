@@ -16,7 +16,7 @@ feature "user places order", %Q{
   scenario "user successfully creates order" do
     visit shop_path(item.shop)
     fill_in "Table number", with: "1"
-    click_button("Create Order")
+    click_button("open order")
     expect(page).to have_content("New Party Created")
     click_button("order item")
     expect(page).to have_content("Item added to order!")

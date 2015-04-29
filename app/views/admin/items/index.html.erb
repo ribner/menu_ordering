@@ -36,7 +36,7 @@
         </div>
         <div class="small-4 columns">
           <br>
-          <p><%= button_to 'order item', shop_orderjoins_path(item.shop , item_id: item.id), class: :button, method: :post  %></p>
+          <p><%= button_to 'edit item', edit_admin_shop_item_path(item.shop, item), class: :button, method: :get %></p>
         </div>
       </div>
 
@@ -44,15 +44,11 @@
 
       <% end %>
     </div>
-    <div class="row"><hr></div>
+
     <div class="row">
       <div class="padding-right">
 
-        <%= link_to 'view order', shop_order_path(@shop,@shop), class: "button right" %>
+
 
       </div>
     </div>
-
-
-
-

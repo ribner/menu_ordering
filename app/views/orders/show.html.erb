@@ -8,29 +8,27 @@
 
     <h3><span><%= @order.shop.name %></span></h3>
 
-
-
   </div>
 </div>
 <div class="content-block">
   <div class="row">
-  <h1>Your Order</h1>
-  <p><%= @order.order_status %><p>
-    <p><%= @order.paid ? "paid" : "unpaid" %><p>
-      <p><%= @order.created_at %><p>
+    <h1>Your Order</h1>
+    <p><%= @order.order_status %><p>
+      <p><%= @order.paid ? "paid" : "unpaid" %><p>
+        <p><%= @order.created_at %><p>
 
-        <% @order.items.each do |item| %>
-        <p> <%=  item.name %> : $<%= item.price %>
-         <% if item.shop.user == current_user %>
-         <%= link_to 'remove from order', shop_orderjoin_path(@shop, @order, item_id: item.id, order_id: @order.id), method: :delete %>
+          <% @order.items.each do |item| %>
+          <p> <%=  item.name %> : $<%= item.price %>
+           <% if item.shop.user == current_user %>
+           <%= link_to 'remove from order', shop_orderjoin_path(@shop, @order, item_id: item.id, order_id: @order.id), method: :delete %>
+           <% end %>
+         </p>
          <% end %>
-       </p>
-       <% end %>
-       <p>Order Total: $<%= @order.total_price %></p>
-       <% if @order.paid %>
-       <h4> Thank you for dining with us</h4>
-       <% else %>
-       <%= link_to 'pay order', edit_shop_order_path(@order.shop, @order, paid: true ) %>
-       <% end %>
+         <p>Order Total: $<%= @order.total_price %></p>
+         <% if @order.paid %>
+         <h4> Thank you for dining with us</h4>
+         <% else %>
+         <%= link_to 'pay order', edit_shop_order_path(@order.shop, @order, paid: true ) %>
+         <% end %>
+       </div>
      </div>
-   </div>

@@ -1,0 +1,7 @@
+<div class="content-block">
+  <div class="row">
+    <h1>Edit Menu Item</h1>
+    <%= render 'form' %>
+    <%= link_to 'Delete Item', admin_shop_item_path(@item.shop, @item), class: "button", method: :delete %>
+  </div>
+</div>

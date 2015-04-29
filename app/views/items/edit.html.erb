@@ -1,7 +1,0 @@
-<div class="content-block">
-  <h1>Edit Menu Item</h1>
-  <%= render 'form' %>
-  <% if current_user = @item.shop.user %>
-    <%= link_to 'Delete Item', shop_item_path(@item.shop,@item), method: :delete %>
-  <% end %>
-</div>

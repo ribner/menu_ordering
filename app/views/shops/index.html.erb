@@ -1,10 +1,9 @@
-
 <div class="content-block">
   <div class="row">
 
     <% @shops.each do |shop| %>
-      <div class="large-6 columns">
-        <div class="shop-list">
+    <div class="large-6 columns">
+      <div class="shop-list">
         <h3><%= link_to shop.name , shop_path(shop) %></h3>
         <p>address: <%= shop.street_address %></p>
         <p>city: <%= shop.city %></p>
