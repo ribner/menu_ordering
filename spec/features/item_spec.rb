@@ -82,9 +82,7 @@ feature "user edits item", %Q{
   let!(:item) { FactoryGirl.create(:item) }
   let!(:user) { FactoryGirl.create(:user) }
   before :each do
-    user1 = item.shop.user
-    user1.admin = true
-    sign_in user1
+    sign_in item.shop.user
   end
 
   scenario "user tries to edit a menu item" do
