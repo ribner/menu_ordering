@@ -10,14 +10,41 @@
   </div>
 </div>
 <div class="content-block">
-  <div class= "row">
-    <%= link_to 'view  open orders', admin_shop_orders_path(@shop), class: "button"  %>
-    <%= link_to 'view  todays orders', admin_shop_orders_path(@shop, today: true ), class: "button"  %>
-    <%= link_to 'view all orders', admin_shop_orders_path(@shop, all: true ), class: "button"  %>
-    <%= link_to 'create menu', new_admin_shop_item_path(@shop), class: "button"  %>
-    <%= link_to 'edit/view menu', admin_shop_items_path(@shop), class: "button"  %>
-    <%= button_to 'edit restaurant', edit_admin_shop_path(@shop), method: :get, class: "button"  %>
-    <%= link_to 'view weeks sales by day', admin_shop_charts_path(@shop), class: "button"  %>
-    <%= link_to 'view revenue by item', admin_shop_barcharts_path(@shop), class: "button" %>
+  <div class= "row admin-row">
+    <div class="small-6 large-3 columns">
+    <%= link_to image_tag('open.png'), admin_shop_orders_path(@shop)  %><br>
+    <%= link_to 'view open orders', admin_shop_orders_path(@shop)  %>
+  </div>
+  <div class="small-6 large-3 columns">
+     <%= link_to image_tag('today.png'), admin_shop_orders_path(@shop, today: true )  %><br>
+    <%= link_to 'view todays orders', admin_shop_orders_path(@shop, today: true )  %>
+  </div>
+  <div class="small-6 large-3 columns">
+     <%= link_to image_tag('all_orders.png'), admin_shop_orders_path(@shop, all: true ) %><br>
+    <%= link_to 'view all orders', admin_shop_orders_path(@shop, all: true ) %>
+  </div>
+  <div class="small-6 large-3 columns">
+    <%= link_to image_tag('add_menu.png'), new_admin_shop_item_path(@shop) %><br>
+    <%= link_to 'create menu', new_admin_shop_item_path(@shop) %>
+  </div>
+
+  </div>
+  <div class="row admin-row">
+    <div class="small-6 large-3 columns">
+    <%= link_to image_tag('edit_menu.png'), admin_shop_items_path(@shop) %><br>
+    <%= link_to 'edit/view menu', admin_shop_items_path(@shop) %>
+  </div>
+  <div class="small-6 large-3 columns">
+    <%= link_to image_tag('edit_menu.png'), admin_shop_items_path(@shop) %><br>
+    <%= link_to 'edit restaurant', edit_admin_shop_path(@shop), method: :get %>
+  </div>
+  <div class="small-6 large-3 columns">
+    <%= link_to  image_tag('daily.png'), admin_shop_charts_path(@shop) %><br>
+    <%= link_to  'daily revenue', admin_shop_charts_path(@shop) %>
+  </div>
+  <div class="small-6 large-3 columns">
+    <%= link_to image_tag('byitem.png'), admin_shop_barcharts_path(@shop) %><br>
+    <%= link_to 'revenue by item', admin_shop_barcharts_path(@shop) %>
+  </div>
   </div>
 </div>
