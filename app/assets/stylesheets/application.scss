@@ -151,6 +151,17 @@ margin:10px;
   }
 }
 
+.admin-row {
+  padding-bottom: 25px;
+  a {
+    color: #4058B0;
+    font-size: 18px;
+  }
+  img {
+     margin-bottom: 10px;
+     margin-top: 10px;
+  }
+}
 .black-block {
   background-color: $darkest-color;
   h3, h2, h1, p {
