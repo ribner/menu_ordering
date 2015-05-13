@@ -1,7 +1,7 @@
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<%= javascript_include_tag 'https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js' %>
+<%= javascript_include_tag '//code.highcharts.com/highcharts.js' %>
 <script type="text/javascript" charset="utf-8">
 $(function() {
-
   new Highcharts.Chart({
     chart: {
       renderTo: "orders_chart"
@@ -23,24 +23,17 @@ $(function() {
     }]
   });
 });
-
-
 </script>
-<div class="upper-block">
 
+<div class="upper-block">
   <div class="row show-title">
     <div class="small-4 columns">
       <%= image_tag("meni-large.png") %>
     </div>
-
     <h1><span><%= @shop.name %></span></h1>
-
-
-
   </div>
 </div>
 <div class="content-block">
-
   <br>
   <div class="row">
     <div id="orders_chart">

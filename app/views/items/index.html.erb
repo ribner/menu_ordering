@@ -1,23 +1,18 @@
 <div class="upper-block">
-
   <div class="row show-title">
     <div class="small-4 columns">
       <%= image_tag("meni-large.png") %>
     </div>
-
     <h1><span><%= @shop.name %></span></h1>
-
   </div>
 </div>
 <div class="content-block">
-
   <div class="row">
     <h2 class="text-center">MENU</h2>
     <div class="row text-center icons">
       <%= image_tag("plate-icon.png") %>
       <%= image_tag("spoonandfork.png") %>
       <%= image_tag("salad-icon.png") %>
-
     </div>
     <% @items.each do |item| %>
     <div class="large-6 columns">
@@ -39,19 +34,17 @@
           <p><%= button_to 'order item', shop_orderjoins_path(item.shop , item_id: item.id), class: :button, method: :post  %></p>
         </div>
       </div>
+    <% end %>
+  </div>
+  <div class="row"><hr></div>
+  <div class="row">
+    <div class="padding-right">
 
+      <%= link_to 'view order', shop_order_path(@shop,@shop), class: "button right" %>
 
-
-      <% end %>
     </div>
-    <div class="row"><hr></div>
-    <div class="row">
-      <div class="padding-right">
-
-        <%= link_to 'view order', shop_order_path(@shop,@shop), class: "button right" %>
-
-      </div>
-    </div>
+  </div>
+</div>
 
 
 

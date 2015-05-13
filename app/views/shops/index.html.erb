@@ -2,18 +2,18 @@
   <div class="row">
 
     <% @shops.each do |shop| %>
-    <div class="large-6 columns">
-      <div class="shop-list">
-        <h3><%= link_to shop.name , shop_path(shop) %></h3>
-        <p>address: <%= shop.street_address %></p>
-        <p>city: <%= shop.city %></p>
-        <p>state: <%= shop.state %></p>
-        <p>zip: <%= shop.zip_code %></p>
-        <p>reservations: <%= shop.reservations ? "Yes" : "No" %></p>
-        <p>delivery: <%= shop.delivery ? "Yes" : "No" %></p>
-        <p>phone: <%= shop.phone %></p>
+      <div class="large-6 columns">
+        <div class="shop-list">
+          <h3><%= link_to shop.name , shop_path(shop) %></h3>
+          <p>address: <%= shop.street_address %></p>
+          <p>city: <%= shop.city %></p>
+          <p>state: <%= shop.state %></p>
+          <p>zip: <%= shop.zip_code %></p>
+          <p>reservations: <%= shop.reservations ? "Yes" : "No" %></p>
+          <p>delivery: <%= shop.delivery ? "Yes" : "No" %></p>
+          <p>phone: <%= shop.phone %></p>
+        </div>
       </div>
-    </div>
     <% end %>
 
   </div>

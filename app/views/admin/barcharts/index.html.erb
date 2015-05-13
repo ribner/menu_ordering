@@ -1,22 +1,37 @@
 <%= javascript_include_tag 'https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js' %>
+<%= javascript_include_tag '//code.highcharts.com/highcharts.js' %>
 <script type="text/javascript" charset="utf-8">
-var itemArray = <%= raw @item_array %>
-var totalItemRevenue = <%= raw @total_item_revenue %>
+$(function() {
+  new Highcharts.Chart({
+    chart: {
+      type: "column",
+      renderTo: "items_chart"
+    },
+    xAxis: {
+      categories: <%= raw @item_array %>
+    },
+    yAxis: {
+      title: {
+        text: "Dollars"
+      }
+    },
+    series: [{
+
+      data: <%= raw @total_item_revenue %>
+    }]
+  });
+});
 </script>
 
 <div class="upper-block">
-
   <div class="row show-title">
     <div class="small-4 columns">
       <%= image_tag("meni-large.png") %>
     </div>
-
     <h1><span><%= @shop.name %></span></h1>
-
   </div>
 </div>
 <div class="content-block">
-
   <br>
   <div class="row">
     <div id="items_chart">

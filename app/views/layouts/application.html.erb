@@ -6,43 +6,38 @@
   <link href='//fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'>
   <title>meni app</title>
   <%= stylesheet_link_tag 'application', media: 'all' %>
+  <%= javascript_include_tag :application %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
   <nav class="top-bar">
     <ul class="title-area">
       <li class="name">
         <h1><a href="/">meni</a></h1>
       </li>
     </ul>
-
     <section class="top-bar-section">
       <ul class="right">
         <% if current_user && current_user.admin%>
-        <% admin_shop = current_user.find_shop %>
-        <li><%= link_to 'Admin Section',  admin_shop_path(current_user.find_shop.id) %></li>
-
+          <% admin_shop = current_user.find_shop %>
+          <li><%= link_to 'Admin Section',  admin_shop_path(current_user.find_shop.id) %></li>
         <% end %>
         <li><%= link_to 'Restaurant List', shops_path %></li>
         <%- if current_user -%>
-        <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+          <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
         <%- else -%>
-        <li><%= link_to 'Sign Up', new_user_registration_path %></li>
-        <li><%= link_to 'Sign In', new_user_session_path %></li>
+          <li><%= link_to 'Sign Up', new_user_registration_path %></li>
+          <li><%= link_to 'Sign In', new_user_session_path %></li>
         <%- end -%>
       </ul>
     </section>
   </nav>
-
   <%- flash.each do |key, value| -%>
-  <div class="flash flash-<%= key %>">
-    <%= value %>
-  </div>
+    <div class="flash flash-<%= key %>">
+      <%= value %>
+    </div>
   <%- end -%>
-
   <%= yield %>
-
 </div>
 <div class="row footer">
   <div class="large-8 columns">

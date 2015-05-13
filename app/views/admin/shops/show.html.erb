@@ -35,8 +35,8 @@
     <%= link_to 'edit/view menu', admin_shop_items_path(@shop) %>
   </div>
   <div class="small-6 large-3 columns">
-    <%= link_to image_tag('edit_menu.png'), admin_shop_items_path(@shop) %><br>
-    <%= link_to 'edit restaurant', edit_admin_shop_path(@shop), method: :get %>
+    <%= link_to image_tag('edit_menu.png'), edit_admin_shop_path(@shop) %><br>
+    <%= link_to 'edit restaurant', edit_admin_shop_path(@shop) %>
   </div>
   <div class="small-6 large-3 columns">
     <%= link_to  image_tag('daily.png'), admin_shop_charts_path(@shop) %><br>

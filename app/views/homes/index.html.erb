@@ -19,8 +19,8 @@
       <div class="small-8 small-offset-4 columns">
         <div class="home-button-spacing">
           <% if current_user && current_user.admin%>
-          <% admin_shop = current_user.find_shop %>
-          <%= link_to 'admin section', admin_shop_path(admin_shop.id) , class: "button" %>&nbsp;&nbsp;
+            <% admin_shop = current_user.find_shop %>
+            <%= link_to 'admin section', admin_shop_path(admin_shop.id) , class: "button" %>&nbsp;&nbsp;
           <% end %>
           <%= link_to 'create restaurant', new_shop_path , class: "button" %>&nbsp;&nbsp;
           <%= link_to 'restaurant list', shops_path, class: "button"%>
