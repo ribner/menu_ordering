@@ -8,12 +8,13 @@ class OrderjoinsController < ApplicationController
     if @order == nil
       flash[:notice] = "You must first record your table number"
     else
+      @item = Item.find(params[:item_id])
       @orderjoin = @order.orderjoins.new(item_id: params[:item_id])
-      if @orderjoin.save
-        flash[:notice] = "Item added to order!"
-      end
+      @orderjoin.save
     end
-    redirect_to shop_items_path(@shop)
+    respond_to do |format|
+      format.js
+    end
   end
 
   def show
@@ -21,7 +22,6 @@ class OrderjoinsController < ApplicationController
   end
 
   def destroy
-    #needs [0] at end of below statement ?
     @orderjoin = Orderjoin.where("item_id = ? and order_id = ?", params[:item_id], params[:order_id])
     Orderjoin.delete(@orderjoin.first.id)
     redirect_to(:back)

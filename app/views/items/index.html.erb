@@ -14,6 +14,7 @@
       <%= image_tag("spoonandfork.png") %>
       <%= image_tag("salad-icon.png") %>
     </div>
+    <div id="order-alert"></div>
     <% @items.each do |item| %>
     <div class="large-6 columns">
       <div class="small-8 columns">
@@ -31,7 +32,7 @@
         </div>
         <div class="small-4 columns">
           <br>
-          <p><%= button_to 'order item', shop_orderjoins_path(item.shop , item_id: item.id), class: :button, method: :post  %></p>
+          <p><%= button_to 'order item', shop_orderjoins_path(item.shop , item_id: item.id), class: :button, method: :post, remote: true  %></p>
         </div>
       </div>
     <% end %>

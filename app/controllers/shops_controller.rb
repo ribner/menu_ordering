@@ -26,7 +26,6 @@ class ShopsController < ApplicationController
     @shops = Shop.all
   end
 
-
   private
 
   def shop_params

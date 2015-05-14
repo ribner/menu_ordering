@@ -1,0 +1,212 @@
+@import 'foundation-icons';
+@import url(//fonts.googleapis.com/css?family=Poiret+One);
+@import url(//fonts.googleapis.com/css?family=Questrial);
+@import url(//fonts.googleapis.com/css?family=Quicksand);
+
+$darkest-color: #111;
+$main-orange: #f07005;
+$alt-orange: #f0a205;
+$extra-style-font: 'Poiret One', cursive;
+$lightest-non-white: #F8F8F8;
+$light-non-white: #E8E8E8;
+
+p {
+  margin: 0;
+}
+
+.shop-info hr {
+  border-color: $main-orange;
+}
+
+h1, h2, h3 {
+  font-family: $extra-style-font;
+}
+.description {
+  padding-top: 30px;
+}
+
+.icons img {
+  height: 100px;
+  width: 100px;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+body {
+  background-color: $darkest-color;
+  font-family: 'Quicksand', sans-serif;
+}
+.footer i {
+  font-size: 28px;
+  color: $main-orange;
+}
+.padding-right {
+  margin-right: 58px;
+}
+.footer p, a{
+  color: $main-orange;
+  font-size: 1em;
+}
+
+.flash {
+  background-color: $main-orange;
+  color: $darkest-color;
+}
+
+.shop-list {
+  border: 1px solid ;
+  border-color: #E0e0e0;
+  margin: 5px;
+  margin-top: 10px;
+  padding: 10px;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.16), 0 2px    5px 0 rgba(0, 0, 0, 0.26);
+
+}
+.table-form label {
+  color: $main-orange;
+  padding-bottom: 8px;
+  font-size: 18px;
+}
+
+.white-container {
+  padding-left: 0px;
+  border: 10px solid ;
+  border-color: $alt-orange;
+  h3, h4, h5 {
+  font-family: 'Quicksand', sans-serif;
+  color: $main-orange;
+  font-weight: lighter;
+  }
+}
+.upper-padding {
+  padding-top: 100px;
+  padding-bottom: 20px;
+}
+.secondary-bg {
+background-color: $light-non-white;
+}
+
+.shop-info {
+  padding-top: 40px;
+  p {
+  margin: 0;
+}
+}
+
+
+.show-title {
+  position: relative;
+  margin-bottom: 30px;
+  color: $main-orange;
+  h1, h2, h3 {
+  color: $main-orange;
+  }
+}
+.show-title span {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.menu-item-block {
+border: 1px solid ;
+border-color: #D8D8D8 ;
+padding:8px;
+margin:10px;
+}
+
+.home-bg {
+ height: 100%;
+ color: #FFF !important;
+ text-align: right;
+ h3 {
+  margin-top: 10px;
+  color: $main-orange;
+}
+}
+
+
+.upper-block {
+  background-color: $darkest-color;
+  h3 {
+    color: $main-orange;
+    padding-bottom: 10px;
+  }
+}
+
+.admin-row {
+  padding-bottom: 25px;
+  a {
+    color: #4058B0;
+    font-size: 18px;
+  }
+  img {
+     margin-bottom: 10px;
+     margin-top: 10px;
+  }
+}
+.black-block {
+  background-color: $darkest-color;
+  h3, h2, h1, p {
+    color: $main-orange;
+    padding-bottom: 10px;
+  }
+}
+.lower-block {
+  background-color: $darkest-color;
+
+}
+.home-button-spacing {
+  padding-top: 20px;
+}
+
+.middle-block {
+  height: 33vh;
+  background-image: image-url("warsaw2.jpg");
+ background-repeat:no-repeat;
+ background-size: cover;
+ background-position: bottom;
+}
+
+
+.button {
+background-color: rgba(0, 0, 0, 0.0); ;
+color: $main-orange;
+border: 2px solid ;
+border-color: $main-orange;
+padding:8px;
+margin-top:10px;
+
+}
+
+.top-bar .name h1 a {
+  color: $main-orange ;
+}
+
+.top-bar-section ul li > a {
+  color: $main-orange ;
+}
+.content-block {
+  background-color: $lightest-non-white;
+  padding: 15px;
+  margin-top: 15px;
+  border-style: solid;
+  border-color: $alt-orange;
+  border-width: 12px;
+  margin-bottom: 15px;
+  border-left:none;
+  border-right: none;
+}
+
+iframe {
+  height: 360px;
+  width:  100%;
+}
+
+#order-alert p{
+  text-align: center;
+ color: $main-orange;
+ font-size: 20px;
+ font-family: sans-serif;
+ font-weight: bolder;
+}
