@@ -71,39 +71,51 @@ feature "user edits a shop they own", %Q{
   let!(:user) { FactoryGirl.create(:user) }
 
   scenario "owner edits a shop they own" do
-    sign_in shop.user
+    user = shop.user
+    user.admin = true
+    sign_in user
+    user.save
     visit admin_shop_path(shop)
     page.should have_selector(:link_or_button, 'edit restaurant')
   end
 
   scenario "owner provides new valid information" do
-    sign_in shop.user
-    visit edit_shop_path(shop)
+    user = shop.user
+    user.admin = true
+    sign_in user
+    user.save
+    visit edit_admin_shop_path(shop)
     fill_in("Description", with: "New description goes here")
-    click_button("Update Shop")
+    click_button("create / update restaurant")
     expect(page).to have_content("Restaurant updated!")
   end
 
   scenario "owner provides new invalid information" do
-    sign_in shop.user
-    visit edit_shop_path(shop)
+    user = shop.user
+    user.admin = true
+    sign_in user
+    user.save
+    visit edit_admin_shop_path(shop)
     fill_in("Name", with: "")
-    click_button("Update Shop")
+    click_button("create / update restaurant")
     expect(page).to have_content("Name can't be blank")
   end
 
 
   scenario "user attempts to update shop with invalid information" do
-    sign_in shop.user
-    visit edit_shop_path(shop)
+    user = shop.user
+    user.admin = true
+    sign_in user
+    user.save
+    visit edit_admin_shop_path(shop)
     fill_in("Name", with: "")
-    click_button("Update Shop")
+    click_button("create / update restaurant")
     expect(page).to have_content("Name can't be blank")
   end
 
   scenario "user tries to update a shop they don't own" do
     sign_in user
-    visit shop_path(shop)
+    visit edit_admin_shop_path(shop)
     expect(page).not_to have_content("edit restaurant")
   end
 end
@@ -117,17 +129,22 @@ feature "user deletes a shop they own", %Q{
   let!(:shop) { FactoryGirl.create(:shop) }
 
   scenario "owner visits their own shop's details page" do
-    sign_in shop.user
-    visit edit_shop_path(shop)
-
+    user = shop.user
+    user.admin = true
+    sign_in user
+    user.save
+    visit edit_admin_shop_path(shop)
     page.should have_selector(:link_or_button, 'Delete')
   end
 
   scenario "owner deletes their own shop" do
-    sign_in shop.user
-    visit edit_shop_path(shop)
+    user = shop.user
+    user.admin = true
+    sign_in user
+    user.save
+    visit edit_admin_shop_path(shop)
     click_link("Delete")
-
+    save_and_open_page
     expect(page).to have_content("Restaurant deleted!")
   end
 end

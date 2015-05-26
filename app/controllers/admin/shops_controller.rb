@@ -25,6 +25,8 @@ module Admin
       @shop = Shop.find(params[:id])
       @shop.destroy
       flash[:notice] = "Restaurant deleted!"
+      @shop.user.admin = false
+      @shop.user.save
       redirect_to root_path
     end
 

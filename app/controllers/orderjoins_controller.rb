@@ -7,13 +7,13 @@ class OrderjoinsController < ApplicationController
     @order = @shop.orders.where(paid: false, user_id: current_user)[0]
     if @order == nil
       flash[:notice] = "You must first record your table number"
+      redirect_to shop_items_path(@shop)
     else
       @item = Item.find(params[:item_id])
       @orderjoin = @order.orderjoins.new(item_id: params[:item_id])
       @orderjoin.save
-    end
-    respond_to do |format|
-      format.js
+      flash[:notice] = "Item added to order"
+      redirect_to shop_items_path(@shop)
     end
   end
 

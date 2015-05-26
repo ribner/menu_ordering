@@ -19,7 +19,7 @@ feature "user places order", %Q{
     click_button("Menu")
     expect(page).to have_content("New Party Created")
     click_button("order item")
-    expect(page).to have_content("on it's way!")
+    expect(page).to have_content("Item added")
   end
 
   scenario "user orders menu item without first inputting table" do
